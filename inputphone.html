@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>หัวข้อการติดต่อ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <div class="blur-overlay">
+        <div class="container mt-4 flex-grow-1">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-auto">
+                    <img src="http://phrae1.doh.go.th/template/template1_1/orange/images/logo.png" width="150px">
+                    <!-- <div class="rounded-circle border d-flex align-items-center justify-content-center" style="width: 180px; height: 180px;">
+                    
+                    </div> -->
+                </div>
+                <div class="col">
+                    <div class="form-control bg-light p-2"  style="width:50%; margin-left: 50%;">ข้อความประชาสัมพันธ์ </div>
+                </div>
+            </div>
+
+            <br>
+            <h2 class="mb-3 text-center">ระบุเบอร์โทร</h2>
+
+            <!-- ช่องป้อนหมายเลข -->
+             <center>
+                <input type="text" id="phoneInput"  name="phoneInput"  class="form-control text-center fs-4 mb-3" readonly style="width:50%; ">
+    
+             </center>
+            
+            <!-- ปุ่มตัวเลข -->
+            <div class="d-flex justify-content-center">
+                <div class="d-grid gap-2">
+                    <div class="row g-2">
+                        <div class="col-3"><button class="btn btn-dark numpad" onclick="insertNumber(1)">1</button></div>
+                        <div class="col-3"><button class="btn btn-dark numpad" onclick="insertNumber(2)">2</button></div>
+                        <div class="col-3"><button class="btn btn-dark numpad" onclick="insertNumber(3)">3</button></div>
+                        <div class="col-3"><button class="btn btn-dark numpad" onclick="deleteNumber()">❌</button></div>
+                    </div>
+                    <div class="row g-2">
+                        <div class="col-3"><button class="btn btn-dark numpad" onclick="insertNumber(4)">4</button></div>
+                        <div class="col-3"><button class="btn btn-dark numpad" onclick="insertNumber(5)">5</button></div>
+                        <div class="col-3"><button class="btn btn-dark numpad" onclick="insertNumber(6)">6</button></div>
+                    </div>
+                    <div class="row g-2">
+                        <div class="col-3"><button class="btn btn-dark numpad" onclick="insertNumber(7)">7</button></div>
+                        <div class="col-3"><button class="btn btn-dark numpad" onclick="insertNumber(8)">8</button></div>
+                        <div class="col-3"><button class="btn btn-dark numpad" onclick="insertNumber(9)">9</button></div>
+                        <button class="btn btn-success numpad" onclick="submitForm()">ตกลง</button>
+                    </div>
+                    <div class="row g-2">
+                        <div class="col-3 offset-3"><button class="btn btn-dark numpad" onclick="insertNumber(0)">0</button></div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- ปุ่มตกลง -->
+            <div class="mt-3">
+               
+            </div>
+
+            <br>
+            
+             <!-- Floating Button Group -->
+            <div class="position-fixed bottom-3 end-0 pe-3 d-flex gap-2" >
+                <!-- ปุ่มโฮม -->
+                <button onclick="history.back()" class="btn btn-primary rounded-circle shadow-lg d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                    <i class="bi bi-house-door"></i>
+                </button>
+                
+                <!-- ปุ่มย้อนกลับ -->
+                <button onclick="history.back()" class="btn btn-warning rounded-circle shadow-lg d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                    <i class="bi bi-arrow-left"></i>
+                </button>
+
+                <!-- ปุ่มเมนูหลัก -->
+                <!-- <button class="btn btn-danger rounded-circle shadow-lg d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                    <i class="bi bi-list"></i>
+                </button> -->
+            </div>
+
+            <footer class="text-center mt-4 py-3 border-top" >
+                <b>แขวงทางหลวงแพร่ กรมทางหลวง</b><br>
+                243 ม.1 ถนนยันตรกิจโกศล ตำบลทุ่งกวาว อำเภอเมือง จังหวัดแพร่ 54000
+            </footer>
+        </div>
+    </div>
+    <script>
+        function insertNumber(num) {
+            let inputField = document.getElementById("phoneInput");
+            inputField.value += num;
+        }
+
+        function deleteNumber() {
+            let inputField = document.getElementById("phoneInput");
+            inputField.value = inputField.value.slice(0, -1);
+        }
+
+        function submitForm() {
+            alert("หมายเลขที่ป้อน: " + document.getElementById("phoneInput").value);
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
