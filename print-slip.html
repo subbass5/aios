@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=58mm, initial-scale=1">
+    <title>พิมพ์ Slip 58mm</title>
+    <style>
+        body {
+            font-family: "Tahoma", sans-serif;
+            font-size: 12px;
+            width: 58mm;
+            margin: 0 auto;
+        
+        }
+        .receipt {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .divider {
+            border-top: 1px solid black;
+            margin: 10px 0;
+        }
+        @media print {
+            @page {
+                size: 58mm auto; /* ความกว้าง 58mm ความสูงอัตโนมัติ */
+                margin: 0; /* กำหนดให้ไม่มีขอบ */
+            }
+            
+            body {
+                width: 58mm;
+                margin: 0;
+                padding: 0;
+                font-size: 12px;
+            }
+
+            .receipt {
+                width: 58mm;
+                padding: 5px;
+                border: none; /* ซ่อนขอบเวลาพิมพ์ */
+            }
+
+            .divider {
+                border-top: 1px dashed black; /* ใช้เส้นปะเพื่อให้เหมาะกับเครื่องพิมพ์ */
+            }
+
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="receipt">
+        <center>
+        <!-- <div class="logo">logo<br>องค์กร</div> -->
+        <img src="img/logo-main.png" width="50px">
+        <div class="bold">แขวงทางหลวงแพร่<br>กรมทางหลวง</div>
+        <div>054-511193</div>
+    </center>
+        <div class="divider"></div>
+
+        <p><span class="bold">ติดต่อ:</span> ผู้บริหาร</p>
+        <p><span class="bold">หัวข้อการติดต่อ:</span> ขอเข้าพบผู้อำนวยการ</p>
+        <p><span class="bold">วันเวลา:</span> 21/02/2568 11:00:00</p>
+        <p><span class="bold">รายละเอียด:</span> ตึกอำนวยการชั้นที่ 2 เดินขึ้นบันไดเลี้ยวซ้าย</p>
+
+        <center>
+            <p class="bold">ผู้รับผิดชอบ</p>
+            <p>นางสาวเสาวภา แสงดวง</p>
+            <p>โทร. 086-9233440</p>
+    
+        </center>
+       
+        <div class="divider"></div>
+        <center>
+            <p><span class="bold">เบอร์โทรผู้ติดต่อ</span></p>
+            <p>08x-xxxxxxx</p>
+    
+            <small>รอดำเนินการ 1 คิว</small>
+        </center>
+       
+    </div>
+</body>
+</html>
